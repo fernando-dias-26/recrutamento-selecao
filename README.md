@@ -14,12 +14,5 @@ contratar com os mesmos critérios para todos os candidatos, de forma rápida e 
 - **Indicadores:** tempo para preencher a vaga, custo por contratação e rotatividade nos primeiros 90 dias.
 - **Base:** curso de Recrutamento e Seleção de Pessoas (Udemy).
 
-## Como publicar na Vercel (sem programar)
-1. No GitHub, crie um repositório novo e envie estes arquivos (botão **Add file → Upload files**).
-2. Em [vercel.com](https://vercel.com), clique em **Add New → Project** e escolha este repositório.
-3. Deixe tudo como está e clique em **Deploy**. Em alguns segundos o site estará no ar.
-
-Para atualizar, troque os arquivos no GitHub e a Vercel publica de novo sozinha.
-
 ## Autor
 [Fernando Henrique Almeida Dias](https://www.linkedin.com/in/fernando-hnerique-50b21b299)
