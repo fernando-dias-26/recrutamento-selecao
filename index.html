@@ -3,29 +3,225 @@
 <title>Processo estruturado de recrutamento e seleção · Fernando Henrique Almeida Dias</title><meta name="description" content="contratar com os mesmos critérios para todos os candidatos, de forma rápida e justa.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FAFAF8;--ink:#16181A;--muted:#63666A;--line:#E3E2DD;--acc:#1F5F54;--sf:#fff}
-@media(prefers-color-scheme:dark){:root{--bg:#111315;--ink:#ECEDEE;--muted:#9A9FA5;--line:#2A2E32;--acc:#6FC4B2;--sf:#181B1E}}
+:root{--bg:#FAFAF8;--ink:#16181A;--muted:#63666A;--line:#E3E2DD;--acc:#1F5F54;--sf:#fff;--soft:#F1F4F2;--yel:#FFF4C2;--yel-ink:#6B5A00}
+@media(prefers-color-scheme:dark){:root{--bg:#111315;--ink:#ECEDEE;--muted:#9A9FA5;--line:#2A2E32;--acc:#6FC4B2;--sf:#181B1E;--soft:#1E2326;--yel:#3A3411;--yel-ink:#F0DE82}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.7 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-.w{max-width:760px;margin:0 auto;padding:0 24px}
+.w{max-width:860px;margin:0 auto;padding:0 24px}
 header{padding:clamp(56px,12vh,110px) 0 40px}
 .k{color:var(--acc);font-size:.8rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px}
-h1,h2{font-family:"Source Serif 4",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
-h1{font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.02em}h2{font-size:1.5rem;margin-bottom:14px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:400;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.02em}h2{font-size:1.5rem;margin-bottom:14px}h3{font-size:1.3rem}
 .lead{color:var(--muted);font-size:1.15rem;max-width:34em;margin:20px 0 0}
 section{padding:36px 0;border-top:1px solid var(--line)}
-section p{margin:0;color:var(--muted)}
-ul.d{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.d a{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--sf);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
-.d a:hover{border-color:var(--acc);transform:translateY(-2px)}
-.d b{font:500 1.05rem "Source Serif 4",Georgia,serif;display:block}.d small{color:var(--muted);font-size:.9rem;display:block;font-weight:300}
-.d span{color:var(--acc);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+section>p{margin:0 0 22px;color:var(--muted)}
 dl{margin:0}dt{color:var(--acc);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-top:18px}dd{margin:2px 0 0;color:var(--muted)}
 footer{padding:36px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}footer a{color:var(--ink)}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+
+/* cards de arquivo */
+.files{display:grid;gap:28px}
+.card{border:1px solid var(--line);border-radius:14px;background:var(--sf);overflow:hidden}
+.card-h{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:22px 24px 8px;flex-wrap:wrap}
+.num{color:var(--acc);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;display:block;margin-bottom:6px}
+.sub{color:var(--muted);margin:6px 0 0;font-size:.98rem;max-width:36em}
+.dl{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--acc);border-radius:999px;color:var(--acc);text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;white-space:nowrap;transition:background .2s,color .2s}
+.dl:hover{background:var(--acc);color:var(--bg)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;padding:12px 24px 20px}
+.meta div{font-size:.93rem;color:var(--muted)}
+.meta b{display:block;color:var(--acc);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:3px}
+.meta ul{margin:0;padding-left:18px}
+.pv{background:var(--soft);border-top:1px solid var(--line);padding:22px 24px 26px}
+.pv-l{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sheet{background:var(--sf);border:1px solid var(--line);border-radius:8px;padding:20px 22px;font-size:.88rem;line-height:1.5;box-shadow:0 1px 0 var(--line)}
+.sheet h4{font:500 1.15rem "Source Serif 4",Georgia,serif;margin:0 0 2px}
+.sheet .hint{color:var(--muted);font-size:.82rem;margin:0 0 14px}
+.sheet h5{font:500 .74rem "IBM Plex Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin:16px 0 6px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px 18px}
+.f{border-bottom:1px solid var(--line);padding:3px 0;color:var(--muted);font-size:.82rem}
+.f span{color:var(--ink);font-weight:400}
+.ph{color:var(--muted);font-style:italic}
+.chk{margin:0;padding:0;list-style:none;display:grid;gap:4px;color:var(--muted)}
+.chk li::before{content:"☐ ";color:var(--acc)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.82rem}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}
+th{background:var(--acc);color:var(--bg);font-weight:500}
+td.y{background:var(--yel);color:var(--yel-ink);text-align:center;font-weight:500}
+td.n,th.n{text-align:center;white-space:nowrap}
+tr.tot td{font-weight:500;background:var(--soft)}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:.74rem;background:var(--soft);color:var(--acc);border:1px solid var(--line)}
+.tabs{display:flex;gap:6px;margin-bottom:-1px;flex-wrap:wrap}
+.tab{padding:5px 12px;border:1px solid var(--line);border-bottom:none;border-radius:6px 6px 0 0;font-size:.78rem;background:var(--soft);color:var(--muted)}
+.tab.on{background:var(--sf);color:var(--ink);font-weight:500}
+.tabbed{border:1px solid var(--line);border-radius:0 8px 8px 8px;background:var(--sf);padding:14px}
+.tabbed + .tabs{margin-top:18px}
+.tabbed>.tw{margin:0}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.78rem;color:var(--muted);line-height:1.35}
+.kpi b{display:block;font:500 1.3rem "Source Serif 4",Georgia,serif;color:var(--ink);margin-top:4px}
+.note{font-size:.8rem;color:var(--muted);margin:10px 0 0}
+@media(max-width:560px){.w{padding:0 16px}.card-h,.meta,.pv{padding-left:16px;padding-right:16px}.sheet{padding:14px}}
 </style></head><body>
 <header><div class="w"><p class="k">RH · Projeto</p><h1>Processo estruturado de recrutamento e seleção</h1><p class="lead">contratar com os mesmos critérios para todos os candidatos, de forma rápida e justa.</p></div></header>
 <main class="w">
-<section><h2>Modelos para baixar</h2><ul class="d"><li><a href="modelos/descricao-de-vaga.docx" download><div><b>Descrição de vaga</b><small>Modelo para definir cargo, requisitos e perfil antes de divulgar.</small></div><span>Baixar DOCX</span></a></li><li><a href="modelos/roteiro-entrevista.docx" download><div><b>Roteiro de entrevista</b><small>Perguntas por competência, iguais para todos os candidatos.</small></div><span>Baixar DOCX</span></a></li><li><a href="modelos/ficha-pontuacao.xlsx" download><div><b>Ficha de pontuação</b><small>Notas com pesos, total e ranking automáticos.</small></div><span>Baixar XLSX</span></a></li><li><a href="modelos/acompanhamento-candidatos.xlsx" download><div><b>Acompanhamento de candidatos</b><small>Funil, tempo para contratar e custo por contratação.</small></div><span>Baixar XLSX</span></a></li></ul></section>
+
+<section><h2>Modelos para baixar</h2>
+<p>São 4 arquivos que se encaixam em sequência: da vaga ao indicador final. Abaixo, uma prévia de cada um e para que serve.</p>
+<div class="files">
+
+<!-- 1. DESCRIÇÃO DE VAGA -->
+<article class="card">
+  <div class="card-h">
+    <div><span class="num">1 · Antes de divulgar</span><h3>Descrição de vaga</h3><p class="sub">Modelo para definir cargo, requisitos e perfil antes de divulgar.</p></div>
+    <a class="dl" href="modelos/descricao-de-vaga.docx" download>Baixar DOCX</a>
+  </div>
+  <div class="meta">
+    <div><b>O que faz</b>Obriga o gestor a deixar claro o que a vaga exige antes de abrir o processo, evitando critérios inventados depois.</div>
+    <div><b>Quem preenche</b>Gestor da área, com apoio do RH.</div>
+    <div><b>Resultado</b>Texto pronto para anúncio e base dos critérios usados nas outras fichas.</div>
+  </div>
+  <div class="pv">
+    <p class="pv-l"><span>Prévia do documento</span><span>Word · modelo editável</span></p>
+    <div class="sheet">
+      <h4>Descrição de vaga</h4>
+      <p class="hint">Modelo editável: preencha antes de divulgar a vaga.</p>
+      <div class="fields">
+        <div class="f">Cargo: <span class="ph">…</span></div>
+        <div class="f">Setor / unidade: <span class="ph">…</span></div>
+        <div class="f">Gestor responsável: <span class="ph">…</span></div>
+        <div class="f">Tipo de contrato / jornada: <span class="ph">…</span></div>
+        <div class="f">Faixa salarial e benefícios: <span class="ph">…</span></div>
+        <div class="f">Local de trabalho: <span class="ph">…</span></div>
+        <div class="f">Data de abertura: <span class="ph">…</span></div>
+      </div>
+      <h5>Resumo da vaga</h5>
+      <div class="ph">[2 ou 3 linhas explicando por que a vaga existe e qual o impacto do cargo.]</div>
+      <h5>Principais responsabilidades</h5>
+      <ul class="chk"><li>[ ]</li><li>[ ]</li><li>[ ]</li></ul>
+      <h5>Requisitos obrigatórios</h5>
+      <div class="fields"><div class="f">Escolaridade: <span class="ph">[ ]</span></div><div class="f">Experiência: <span class="ph">[ ]</span></div><div class="f">Conhecimentos: <span class="ph">[ ]</span></div></div>
+      <h5>Diferenciais · Competências comportamentais · Como se candidatar</h5>
+      <div class="ph">[Ex.: trabalho em equipe] · [Ex.: organização] · [Ex.: comunicação]</div>
+    </div>
+  </div>
+</article>
+
+<!-- 2. ROTEIRO -->
+<article class="card">
+  <div class="card-h">
+    <div><span class="num">2 · Na entrevista</span><h3>Roteiro de entrevista</h3><p class="sub">Perguntas por competência, iguais para todos os candidatos.</p></div>
+    <a class="dl" href="modelos/roteiro-entrevista.docx" download>Baixar DOCX</a>
+  </div>
+  <div class="meta">
+    <div><b>O que faz</b>Padroniza a conversa: mesmas perguntas, mesma escala de nota e espaço para anotar a resposta de cada pessoa.</div>
+    <div><b>Estrutura</b><ul><li>Abertura (2 min)</li><li>6 perguntas por competência</li><li>Perguntas práticas</li><li>Fechamento + escala de notas</li></ul></div>
+    <div><b>Quem usa</b>Quem entrevista. Imprima uma folha por candidato.</div>
+  </div>
+  <div class="pv">
+    <p class="pv-l"><span>Prévia do documento</span><span>Word · 1 por candidato</span></p>
+    <div class="sheet">
+      <h4>Roteiro de entrevista por competências</h4>
+      <p class="hint">Use as mesmas perguntas com todos os candidatos e anote as respostas.</p>
+      <div class="fields"><div class="f">Candidato:</div><div class="f">Vaga:</div><div class="f">Entrevistador(a):</div><div class="f">Data:</div></div>
+      <h5>1. Abertura (2 min)</h5>
+      <div class="ph">Apresente-se, explique as etapas do processo e quando o candidato terá retorno.</div>
+      <h5>2. Perguntas por competência</h5>
+      <div class="tw"><table>
+        <tr><th>Competência</th><th>Pergunta</th><th>Anotações</th><th class="n">Nota (0 a 5)</th></tr>
+        <tr><td>Trabalho em equipe</td><td>Conte uma situação em que você precisou trabalhar com alguém difícil. O que fez e como terminou?</td><td></td><td></td></tr>
+        <tr><td>Organização e prazos</td><td>Descreva um período em que teve muitas tarefas ao mesmo tempo. Como se organizou?</td><td></td><td></td></tr>
+        <tr><td>Resolução de problemas</td><td>Fale de um problema que apareceu no trabalho e como você resolveu.</td><td></td><td></td></tr>
+        <tr><td colspan="4" class="ph">+ Comunicação, Responsabilidade e Motivação pela vaga</td></tr>
+      </table></div>
+      <h5>3. Perguntas práticas</h5>
+      <div class="fields"><div class="f">Disponibilidade de horário e início:</div><div class="f">Pretensão salarial:</div><div class="f">Transporte / distância:</div></div>
+      <h5>Escala de notas</h5>
+      <div class="tw"><table>
+        <tr><th class="n">Nota</th><th>Significado</th></tr>
+        <tr><td class="n">0</td><td>Não demonstrou a competência</td></tr>
+        <tr><td class="n">1 a 2</td><td>Demonstrou pouco ou de forma vaga</td></tr>
+        <tr><td class="n">3</td><td>Atende ao esperado, com exemplo concreto</td></tr>
+        <tr><td class="n">4 a 5</td><td>Supera o esperado, com exemplos claros e resultado</td></tr>
+      </table></div>
+    </div>
+  </div>
+</article>
+
+<!-- 3. FICHA DE PONTUAÇÃO -->
+<article class="card">
+  <div class="card-h">
+    <div><span class="num">3 · Depois das entrevistas</span><h3>Ficha de pontuação</h3><p class="sub">Notas com pesos, total e ranking automáticos.</p></div>
+    <a class="dl" href="modelos/ficha-pontuacao.xlsx" download>Baixar XLSX</a>
+  </div>
+  <div class="meta">
+    <div><b>O que faz</b>Compara até 5 candidatos com os mesmos critérios. Cada critério tem um peso, e a planilha calcula nota final e posição.</div>
+    <div><b>Como usar</b>Preencha as notas de 0 a 5 nas células amarelas. Defina os pesos antes das entrevistas e não mude depois.</div>
+    <div><b>Fórmulas</b>Pontuação final de 0 a 100 (média ponderada) e <span class="tag">RANK</span> automático.</div>
+  </div>
+  <div class="pv">
+    <p class="pv-l"><span>Prévia da planilha</span><span>Excel · exemplo ilustrativo</span></p>
+    <div class="sheet">
+      <h4>Ficha de pontuação de candidatos</h4>
+      <p class="hint">Dê notas de 0 a 5 nas células amarelas. O peso define a importância de cada critério. Total e ranking são automáticos.</p>
+      <div class="tw"><table>
+        <tr><th>Critério</th><th class="n">Peso</th><th class="n">Candidato A</th><th class="n">Candidato B</th><th class="n">Candidato C</th></tr>
+        <tr><td>Experiência na função</td><td class="n">3</td><td class="y">4</td><td class="y">3</td><td class="y">5</td></tr>
+        <tr><td>Conhecimentos técnicos</td><td class="n">3</td><td class="y">5</td><td class="y">3</td><td class="y">4</td></tr>
+        <tr><td>Trabalho em equipe</td><td class="n">2</td><td class="y">3</td><td class="y">4</td><td class="y">2</td></tr>
+        <tr><td>Organização e prazos</td><td class="n">2</td><td class="y">4</td><td class="y">5</td><td class="y">3</td></tr>
+        <tr><td>Comunicação</td><td class="n">2</td><td class="y">4</td><td class="y">3</td><td class="y">3</td></tr>
+        <tr><td>Responsabilidade</td><td class="n">2</td><td class="y">5</td><td class="y">4</td><td class="y">3</td></tr>
+        <tr><td>Motivação pela vaga</td><td class="n">1</td><td class="y">4</td><td class="y">5</td><td class="y">3</td></tr>
+        <tr><td>Disponibilidade e adequação</td><td class="n">1</td><td class="y">3</td><td class="y">5</td><td class="y">4</td></tr>
+        <tr class="tot"><td>Pontuação final (0 a 100)</td><td class="n">16</td><td class="n">82,5</td><td class="n">75,0</td><td class="n">70,0</td></tr>
+        <tr class="tot"><td>Posição no ranking</td><td></td><td class="n">1º</td><td class="n">2º</td><td class="n">3º</td></tr>
+      </table></div>
+      <p class="note">Na planilha real as notas vêm em branco e há colunas para os candidatos D e E. Na prévia, mostramos só 3 colunas com valores de exemplo.</p>
+    </div>
+  </div>
+</article>
+
+<!-- 4. ACOMPANHAMENTO -->
+<article class="card">
+  <div class="card-h">
+    <div><span class="num">4 · Durante todo o processo</span><h3>Acompanhamento de candidatos</h3><p class="sub">Funil, tempo para contratar e custo por contratação.</p></div>
+    <a class="dl" href="modelos/acompanhamento-candidatos.xlsx" download>Baixar XLSX</a>
+  </div>
+  <div class="meta">
+    <div><b>O que faz</b>Registra cada candidato (até 60 linhas) e transforma os dados nos indicadores do processo.</div>
+    <div><b>Duas abas</b><ul><li><b style="display:inline;letter-spacing:0;text-transform:none;font-size:inherit;color:var(--ink)">Candidatos:</b> uma linha por pessoa</li><li><b style="display:inline;letter-spacing:0;text-transform:none;font-size:inherit;color:var(--ink)">Indicadores:</b> cálculo automático</li></ul></div>
+    <div><b>Indicadores</b>Tempo para preencher a vaga, % que recebeu retorno, custo por contratação e rotatividade em 90 dias.</div>
+  </div>
+  <div class="pv">
+    <p class="pv-l"><span>Prévia da planilha</span><span>Excel · exemplo ilustrativo</span></p>
+    <div class="sheet">
+      <div class="tabs"><span class="tab on">Candidatos</span><span class="tab">Indicadores</span></div>
+      <div class="tabbed"><div class="tw"><table>
+        <tr><th>Vaga</th><th>Candidato</th><th>Contato</th><th>Candidatura</th><th>Etapa atual</th><th>Entrevista</th><th class="n">Nota</th><th class="n">Retorno?</th><th class="n">Contratado?</th><th>Contratação</th><th class="n">Dias</th></tr>
+        <tr><td>Assistente adm.</td><td>Ana Souza</td><td>(11) 9…</td><td>02/03</td><td>Contratada</td><td>10/03</td><td class="n">82,5</td><td class="n">Sim</td><td class="n">Sim</td><td>18/03</td><td class="n">16</td></tr>
+        <tr><td>Assistente adm.</td><td>Bruno Lima</td><td>(11) 9…</td><td>03/03</td><td>Entrevista</td><td>11/03</td><td class="n">75,0</td><td class="n">Sim</td><td class="n">Não</td><td></td><td class="n"></td></tr>
+        <tr><td>Assistente adm.</td><td>Carla Reis</td><td>(11) 9…</td><td>05/03</td><td>Triagem</td><td></td><td class="n"></td><td class="n">Não</td><td class="n">Não</td><td></td><td class="n"></td></tr>
+      </table></div></div>
+      <p class="note">A coluna “Dias até contratar” é automática: data de contratação menos data da candidatura, só quando “Contratado?” é Sim.</p>
+
+      <div class="tabs" style="margin-top:22px"><span class="tab">Candidatos</span><span class="tab on">Indicadores</span></div>
+      <div class="tabbed">
+        <div class="kpi">
+          <div>Candidatos recebidos<b>3</b></div>
+          <div>Contratações realizadas<b>1</b></div>
+          <div>Tempo médio para preencher (dias)<b>16</b></div>
+          <div>Candidatos que receberam retorno<b>67%</b></div>
+          <div>Custo por contratação (R$)<b>R$ 450</b></div>
+          <div>Rotatividade em 90 dias<b>0%</b></div>
+        </div>
+        <p class="note">Você preenche só os custos totais e os desligamentos (células amarelas); o resto é calculado.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+</div></section>
+
 <section><h2>Como funciona</h2><dl><dt>Etapas</dt><dd>definir cargo e perfil, divulgar a vaga, triar currículos, fazer entrevista por competências com roteiro, pontuar cada candidato e dar retorno a todos.</dd><dt>Indicadores</dt><dd>tempo para preencher a vaga, custo por contratação e rotatividade nos primeiros 90 dias.</dd><dt>Base</dt><dd>curso de Recrutamento e Seleção de Pessoas (Udemy).</dd></dl></section>
 </main>
 <footer><div class="w">Por <a href="https://www.linkedin.com/in/fernando-hnerique-50b21b299" target="_blank" rel="noopener">Fernando Henrique Almeida Dias</a> · <a href="mailto:fh751763@gmail.com">Fale comigo</a></div></footer>
